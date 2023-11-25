@@ -4,3 +4,28 @@ Step 2: This buzzer should start playing only after a switch(blue user push butt
 Step 3:Now configure  ADC(IN0) in polling mode. IN0 refers to the port pin PA0. Now connect a male to male jumper wire from 3.3V to PA0. Update ADC counts continously at 1 second. Observe the same in debug mode
 
 
+(i remember from the class)
+Take prescaler =10000-1
+take counts period=1000-1
+however u may put 
+pre=8000-1
+counts=
+
+part 2
+/* USER CODE BEGIN PV */
+
+char tx_buffer[] = "hasta la vista\n";
+int size = sizeof(tx_buffer)/sizeof(char);
+uint32_t adc_val;
+
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_5);
+}
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	if(GPIO_Pin == GPIO_PIN_13)
+	{
+		HAL_UART_Transmit(&huart2,(uint8_t*)tx_buffer,size-1,100);
+	}
+}
