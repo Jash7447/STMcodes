@@ -28,3 +28,28 @@ HAL_TIM_Base_Start_IT(&htim16);
 		HAL_UART_Transmit(&huart2,(uint8_t*)tx_buffer,size-1,100);
 	}
 }
+
+
+
+//part 3
+```c
+/* USER CODE BEGIN PV */
+uint32_t adc_val;
+
+/* USER CODE END PV */
+```
+
+```c
+/* USER CODE BEGIN 0 */
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+{
+	adc_val = HAL_ADC_GetValue(hadc);
+	
+}
+/* USER CODE END 0 */
+```
+
+```c
+/* USER CODE BEGIN 2 */
+	HAL_ADC_Start_IT(&hadc);
+```
