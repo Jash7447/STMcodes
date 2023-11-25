@@ -4,13 +4,11 @@ Step 2: This buzzer should start playing only after a switch(blue user push butt
 Step 3:Now configure  ADC(IN0) in polling mode. IN0 refers to the port pin PA0. Now connect a male to male jumper wire from 3.3V to PA0. Update ADC counts continously at 1 second. Observe the same in debug mode
 
 
-(i remember from the class)
-Take prescaler =10000-1
+nvic set kardena
+Take prescaler =8000-1
 take counts period=1000-1
-however u may put 
-pre=8000-1
-counts=
 
+i remember from class pre=10000-1
 part 2
 /* USER CODE BEGIN PV */
 
