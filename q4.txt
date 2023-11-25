@@ -1,1 +1,6 @@
+Step 1 :Play the provided buzzer using a timer (TIM16) interrupt. Connect buzzer terminals to PA5(D13) and the ground with correct polatrity. Use provided male-to-male jumper wires. Hint: Configure a timer to generate an interrupt at around 10Hz frequency.  In timer callback function, you should toggle the buzzer port pin. You should be able to hear the sound.
+
+Step 2: This buzzer should start playing only after a switch(blue user push button connected to PC13 is pressed), send a text "hasta la vista" to the computer's serial terminal. User GPIO interrupt. Use USART2. Buzzer stops upon reset.
+Step 3:Now configure  ADC(IN0) in polling mode. IN0 refers to the port pin PA0. Now connect a male to male jumper wire from 3.3V to PA0. Update ADC counts continously at 1 second. Observe the same in debug mode
+
 
